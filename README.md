@@ -1,7 +1,7 @@
 # Steps to Install Gitlab via Helm on Google Kubernetes GKE Cluster
 
 1. Install the GKE Cluster and make connection to the cluster from your terminal
-2. Add static IP in GCP for Gitlab URL and add this ip to your local values yaml (as seen below) and add this ip to the gitlab domain (for us it was gitlab.zekoder.net)
+2. Add static IP in GCP for Gitlab URL and add this ip to your local values yaml (as seen below) and register this ip to the gitlab domain (for us it was gitlab.zekoder.net)
 
   hosts:
     domain: zekoder.net
@@ -17,7 +17,7 @@
     kas: {}
     pages: {}
 
-4. Created Postgres on Google Cloud and connect it to our Gitlab on GKE. https://cloud.google.com/sql/docs/postgres To do that setted postgres Install as False below  
+4. Created Postgres on Google Cloud and connect it to our Gitlab on GKE. https://cloud.google.com/sql/docs/postgres To do that, setted postgres Install as False below  
 
 postgresql:
   postgresqlUsername: gitlab
@@ -41,6 +41,27 @@ postgresql:
     enabled: true
     ## Optionally define additional custom metrics
     ## ref: https://github.com/wrouesnel/postgres_exporter#adding-new-metrics-via-a-config-file
+    
+    
+And enabled external psql config as seen below ;
+
+
+  psql:
+    connectTimeout:
+    keepalives:
+    keepalivesIdle:
+    keepalivesInterval:
+    keepalivesCount:
+    tcpUserTimeout:
+    password: {}
+      # useSecret:
+      # secret:
+      # key:
+      # file:
+    host: 10.40.160.3
+    port: 5432
+    username: postgres
+    database: gitlabhq_production
 
 
 3. Domain zekoder.net needs to be registered somewhere like on AWS(Route 53) or Google Cloud.
