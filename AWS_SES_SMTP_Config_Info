@@ -1,9 +1,0 @@
-SMTP 
-Username:AKIAWA3RKI66ON4PZEEP
-Password: BGpW8Ry3Oop/C65pBBLwhuUyalTRpcsb0MOLk7JvpWzL
-address: email-smtp.eu-central-1.amazonaws.com
-
-STARTTLS Port
-25, 587 or 2587
-
-please use gitlab@zekoder.net
