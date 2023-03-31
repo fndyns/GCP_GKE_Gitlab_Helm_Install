@@ -13,3 +13,5 @@ CNAME,s5g4txhwyi34o66xejyqkwhftg7jugkh._domainkey.cyberneticlabs.io,s5g4txhwyi34
 Melike
   12:09 PM
 We also need to use production access instead of Sandbox for AWS SES service as emails wont send properly in Sandbox mode. I clicked "Request Production Access" button here to request access from AWS. What can we type here in "Use Case " part ? Because if we type it short, AWS will reject our request. Please help on this (edited) 
+
+**** After installing Gitlab via helm command, some pods like Gitlab sidekid, toolbox, webservice were stuck in Inıt status. To fix this, I needed to enable Psotgres Access from GKE. For that I put both Google Cloud SQL and GKE cluser in the same default VPC so that they would access each other via Private IP without need to use Public IP
