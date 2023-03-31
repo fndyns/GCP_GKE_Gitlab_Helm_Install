@@ -1,0 +1,15 @@
+Hello Ahmed. Happy Ramadan ! I see cyberneticlabs.io is not registered on AWS. Could you please add its CNAMEs to domain panel to be able to verify this domain in AWS SES service (edited) 
+dkim-dns-records.csv
+ 
+Type,Name,Value
+CNAME,mgbwxapb5pzpokj6dfrcmli42bb3sofk._domainkey.cyberneticlabs.io,mgbwxapb5pzpokj6dfrcmli42bb3sofk.dkim.amazonses.com
+CNAME,abhozogxhf4h4wcgqdq3vg5r3nwecq7b._domainkey.cyberneticlabs.io,abhozogxhf4h4wcgqdq3vg5r3nwecq7b.dkim.amazonses.com
+CNAME,s5g4txhwyi34o66xejyqkwhftg7jugkh._domainkey.cyberneticlabs.io,s5g4txhwyi34o66xejyqkwhftg7jugkh.dkim.amazonses.com
+
+
+
+
+
+Melike
+  12:09 PM
+We also need to use production access instead of Sandbox for AWS SES service as emails wont send properly in Sandbox mode. I clicked "Request Production Access" button here to request access from AWS. What can we type here in "Use Case " part ? Because if we type it short, AWS will reject our request. Please help on this (edited) 
