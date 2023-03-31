@@ -17,7 +17,7 @@
     kas: {}
     pages: {}
 
-4. Created Postgres on Google Cloud and connect it to our Gitlab on GKE. https://cloud.google.com/sql/docs/postgres To do that, setted postgres Install as False below  
+4. Created Postgres on Google Cloud (Google Cloud SQL) and connect it to our Gitlab on GKE. https://cloud.google.com/sql/docs/postgres To do that, setted postgres Install as False below.
 
 postgresql:
   postgresqlUsername: gitlab
@@ -43,7 +43,7 @@ postgresql:
     ## ref: https://github.com/wrouesnel/postgres_exporter#adding-new-metrics-via-a-config-file
     
     
-And enabled external psql config as seen below ;
+And enabled external psql config as seen below.  Setted postgres private ip 10.40.160.3 as host ip below. Cluster access external Postgres DB via its Private IP since both are in the same default VPC. ello Ahmed. I have enabled "Private IP" for Postgres. Then this Private ip is needed to connect Google Cloud SQL to GKE. (There was another way to connect Google Cloud SQL to GKE . This is Cloud SQL Auth proxy, but to do that, we need to prepare Service account with permission to access Cloud SQL  but I dont have permission  to grant access in existing service account or create a service account with the Cloud SQL role assigned. Please help on this. Ahmed said "according to documentation, using cloud managed redis and postgresql is recommended for production environment so let’s stick with that, it is always better to create non default VPC and use it for K8s and other resources, so you can open only what you need in the new VPC, I have granted you a security admin and SQL admin, this should cover all your needs. By the way you can add permissions to yourself, I have added K8s Admin)
 
 
   psql:
@@ -65,6 +65,7 @@ And enabled external psql config as seen below ;
 
 
 3. Domain zekoder.net needs to be registered somewhere like on AWS(Route 53) or Google Cloud.
+
 # AWS_SES_SMTP_Config_Info
 
 SMTP 
