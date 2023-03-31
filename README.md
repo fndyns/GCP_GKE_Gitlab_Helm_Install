@@ -1,3 +1,23 @@
+# Steps to Install Gitlab via Helm on Google Kubernetes GKE Cluster
+
+1. Install the GKE Cluster and make connection to the cluster from your terminal
+2. Add static IP in GCP for Gitlab URL and add this ip to your local values yaml (as seen below)
+
+  hosts:
+    domain: zekoder.net
+    hostSuffix:
+    https: true
+    externalIP: "34.28.205.131"
+    ssh: ~
+    gitlab: {}
+    minio: {}
+    registry: {}
+    tls: {}
+    smartcard: {}
+    kas: {}
+    pages: {}
+
+3. Domain zekoder.net needs to be registered somewhere like on AWS(Route 53) or Google Cloud.
 # AWS_SES_SMTP_Config_Info
 
 SMTP 
